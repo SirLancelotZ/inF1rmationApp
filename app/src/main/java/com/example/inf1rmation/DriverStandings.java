@@ -3,6 +3,8 @@ package com.example.inf1rmation;
 import com.google.gson.annotations.SerializedName;
 
 import retrofit2.http.Url;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DriverStandings {
 
@@ -12,17 +14,26 @@ public class DriverStandings {
     private Integer position;
 
 
-    @SerializedName("win")
-    private Integer win;
+    @SerializedName("wins")
+    private Integer wins;
 
 
-    @SerializedName("point")
-    private Integer point;
+    @SerializedName("points")
+    private Integer points;
 
 
     @SerializedName("name")
     private String name;
 
+    @SerializedName("driver")
+    private List<String> driver = new ArrayList<String>();
+
+
+    @SerializedName("driverId")
+    private String driverId;
+
+    @SerializedName("permanentNumber")
+    private Integer permanentNumber;
 
 
     @SerializedName("code")
@@ -31,18 +42,39 @@ public class DriverStandings {
     @SerializedName("url")
     private String url;
 
+    @SerializedName("givenName")
+    private String givenName;
+
+    @SerializedName("familyName")
+    private String familyName;
+
+    @SerializedName("dateOfBirth")
+    private String dateOfBirth;
 
     @SerializedName("nationality")
     private String nationality;
 
-    public DriverStandings(Integer position, Integer win, Integer point, String url, String name, String code, String nationality)  {
+    @SerializedName("Constructors")
+    private List<String> Constructors = new ArrayList<String>();
+
+    @SerializedName("constructorId")
+    private String constructorId;
+
+
+
+    public DriverStandings(Integer position, Integer points, Integer wins, String driverId, Integer permanentNumber, String code, String url, String givenName, String familyName, String dateOfBirth,  String nationality, String constructorId)  {
         this.position = position;
-        this.win = win;
-        this.point = point;
-        this.url = url;
-        this.name = name;
+        this.points = points;
+        this.wins = wins;
+        this.driverId = driverId;
+        this.permanentNumber = permanentNumber;
         this.code = code;
+        this.url = url;
+        this.givenName = givenName;
+        this.familyName = familyName;
+        this.dateOfBirth = dateOfBirth;
         this.nationality = nationality;
+        this.constructorId = constructorId;
     }
 
     public Integer getPosition() {
@@ -54,19 +86,19 @@ public class DriverStandings {
     }
 
     public Integer getWin() {
-        return win;
+        return wins;
     }
 
     public void setWin(Integer win) {
-        this.win = win;
+        this.wins = win;
     }
 
     public Integer getPoint() {
-        return point;
+        return points;
     }
 
     public void setPoint(Integer point) {
-        this.point = point;
+        this.points = points;
     }
 
     public String getName() {
