@@ -25,12 +25,36 @@ public class DriverStandings {
     @SerializedName("name")
     private String name;
 
+    public List<String> getDriver() {
+        return driver;
+    }
+
+    public void setDriver(List<String> driver) {
+        this.driver = driver;
+    }
+
     @SerializedName("driver")
     private List<String> driver = new ArrayList<String>();
 
 
+    public String getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
+    }
+
     @SerializedName("driverId")
     private String driverId;
+
+    public Integer getPermanentNumber() {
+        return permanentNumber;
+    }
+
+    public void setPermanentNumber(Integer permanentNumber) {
+        this.permanentNumber = permanentNumber;
+    }
 
     @SerializedName("permanentNumber")
     private Integer permanentNumber;
@@ -42,11 +66,35 @@ public class DriverStandings {
     @SerializedName("url")
     private String url;
 
+    public String getGivenName() {
+        return givenName;
+    }
+
+    public void setGivenName(String givenName) {
+        this.givenName = givenName;
+    }
+
     @SerializedName("givenName")
     private String givenName;
 
+    public String getFamilyName() {
+        return familyName;
+    }
+
+    public void setFamilyName(String familyName) {
+        this.familyName = familyName;
+    }
+
     @SerializedName("familyName")
     private String familyName;
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
     @SerializedName("dateOfBirth")
     private String dateOfBirth;
@@ -54,8 +102,24 @@ public class DriverStandings {
     @SerializedName("nationality")
     private String nationality;
 
+    public List<String> getConstructors() {
+        return Constructors;
+    }
+
+    public void setConstructors(List<String> constructors) {
+        Constructors = constructors;
+    }
+
     @SerializedName("Constructors")
     private List<String> Constructors = new ArrayList<String>();
+
+    public String getConstructorId() {
+        return constructorId;
+    }
+
+    public void setConstructorId(String constructorId) {
+        this.constructorId = constructorId;
+    }
 
     @SerializedName("constructorId")
     private String constructorId;

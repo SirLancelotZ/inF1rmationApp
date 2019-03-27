@@ -1,6 +1,7 @@
 package com.example.inf1rmation;
 
 //import android.app.ProgressDialog;
+import android.graphics.Movie;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -52,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         wireWidgets();
-        
+
+
+
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -62,12 +65,12 @@ public class MainActivity extends AppCompatActivity {
 
         /*Create handle for the RetrofitInstance interface*/
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-        Call<List<DriverStandings>> call = service.getStandings();
+        Call<List<DriverStandings>> call = service.getStandings(2018);
         call.enqueue(new Callback<List<DriverStandings>>() {
             @Override
-            public void onResponse(Call<List<DriverStandings>> call, Response<List<DriverStandings>> response) {
+            public void onResponse(Call<List<DriverStandings>> call, Response<List<DriverStandings>> StandingLists) {
                // progressDialog.dismiss();
-                //generateDataList(response.body());
+                List<StandingResponse> standingResponses = StandingLists.body().getStandingsLists();
             }
 
             @Override

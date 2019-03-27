@@ -4,8 +4,9 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface GetDataService {
-    @GET("/driverStandings")
-    Call<List<DriverStandings>> getStandings();
+    @GET("/{year}/driverStandings.json")
+    Call<List<DriverStandings>> getStandings(@Path("year") int year);
 }
