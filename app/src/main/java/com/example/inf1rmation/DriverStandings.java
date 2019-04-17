@@ -1,12 +1,68 @@
-//package com.example.inf1rmation;
-//
-//import com.google.gson.annotations.SerializedName;
-//
-//import retrofit2.http.Url;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class DriverStandings {
+package com.example.inf1rmation;
+
+import com.google.gson.annotations.SerializedName;
+
+import retrofit2.http.Url;
+import java.util.ArrayList;
+import java.util.List;
+
+public class DriverStandings {
+
+    private String position;
+    private String positionText;
+    private String points;
+    private String wins;
+    private List<Driver> Driver;
+    private List<Constructors> Constructors;
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getPositionText() {
+        return positionText;
+    }
+
+    public void setPositionText(String positionText) {
+        this.positionText = positionText;
+    }
+
+    public String getPoints() {
+        return points;
+    }
+
+    public void setPoints(String points) {
+        this.points = points;
+    }
+
+    public String getWins() {
+        return wins;
+    }
+
+    public void setWins(String wins) {
+        this.wins = wins;
+    }
+
+    public List<com.example.inf1rmation.Driver> getDriver() {
+        return Driver;
+    }
+
+    public void setDriver(List<com.example.inf1rmation.Driver> driver) {
+        Driver = driver;
+    }
+
+    public List<com.example.inf1rmation.Constructors> getConstructors() {
+        return Constructors;
+    }
+
+    public void setConstructors(List<com.example.inf1rmation.Constructors> constructors) {
+        Constructors = constructors;
+    }
+}
 //
 //    @SerializedName("DriverStandings")
 //    private List<Driver> drivers;

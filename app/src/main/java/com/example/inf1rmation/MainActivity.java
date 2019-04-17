@@ -142,8 +142,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<DriverResponse> call, Response<DriverResponse> response) {
                 DriverResponse driverResponse = response.body();
-                Log.d(TAG, "onResponse: " + response.body().getResults().toString());
-                drivers = driverResponse.getResults();
+                Log.d(TAG, "onResponse: " + response.body().getMRData().toString());
+                drivers = driverResponse.getMRData();
                 if(drivers.size() == 0) {
                     Toast.makeText(MainActivity.this, "No matches found!", Toast.LENGTH_SHORT).show();
                     //add in some fake recipes if it finds none for testing purposes
