@@ -1,20 +1,20 @@
-package com.example.inf1rmation;
-
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
-public class RetrofitClientInstance {
-
-    private static Retrofit retrofit;
-    public static final String BASE_URL = "http://ergast.com/api/f1/";
-
-    public static Retrofit getRetrofitInstance() {
-        if (retrofit == null) {
-            retrofit = new retrofit2.Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit;
-    }
-}
+//package com.example.inf1rmation;
+//
+//import retrofit2.Retrofit;
+//import retrofit2.converter.gson.GsonConverterFactory;
+//
+//public class RetrofitClientInstance {
+//
+//    private static Retrofit retrofit;
+//    public static final String BASE_URL = "http://ergast.com/api/f1/";
+//
+//    public static Retrofit getRetrofitInstance() {
+//        if (retrofit == null) {
+//            retrofit = new retrofit2.Retrofit.Builder()
+//                    .baseUrl(BASE_URL)
+//                    .addConverterFactory(GsonConverterFactory.create())
+//                    .build();
+//        }
+//        return retrofit;
+//    }
+//}

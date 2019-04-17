@@ -19,11 +19,18 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.MyViewHold
     private RecyclerViewClickListener recyclerViewClickListener;
 
 
-    public DriverAdapter(Context context, List<Driver> drivers, RecyclerViewClickListener listener) {
+//    public DriverAdapter(Context context, List<Driver> drivers, RecyclerViewClickListener listener) {
+//        this.context = context;
+//        this.drivers = drivers;
+//        recyclerViewClickListener = listener;
+//    }
+
+    public DriverAdapter(MainActivity context, List<Driver> drivers, RecyclerViewClickListener listener) {
         this.context = context;
         this.drivers = drivers;
         recyclerViewClickListener = listener;
     }
+
 
     public void setDrivers(List<Driver> drivers) {
         this.drivers = drivers;
@@ -33,7 +40,7 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.MyViewHold
     @Override
     public DriverAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.cardview_driver, parent, false);
+                .inflate(R.layout.cardview, parent, false);
 
         return new MyViewHolder(itemView, recyclerViewClickListener);
     }
@@ -41,37 +48,37 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.MyViewHold
     //Assigns the appropriate information from the recipe object to each widget in the CardView
     //the holder is created as an inner class
     @Override
-    public void onBindViewHolder(DriverAdapter.MyViewHolder holder, int position) {
-        Driver driver = drivers.get(position);
-        holder.title.setText(driver.getTitle());
-        holder.ingredients.setText(driver.getIngredients());
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+//        Driver driver = drivers.get(position);
+//        holder.name.setText(com.example.inf1rmation.Driver.getname());
+//        holder.team.setText(driver.getTeam());
 
 
-        Picasso.with(context).load(driver.getThumbnail()).into(holder.thumbnail);
+        //Picasso.with(context).load(driver.getThumbnail()).into(holder.thumbnail);
 
     }
 
     @Override
     public int getItemCount() {
-        return drivers.size();
+            return drivers.size();
+
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
-        private TextView title, ingredients;
-        private ImageView thumbnail;
+        private TextView name, team, position;
 
         private RecyclerViewClickListener recyclerViewClickListener;
 
         //wire the items in the CardView to instance variables
         public MyViewHolder(View itemView, RecyclerViewClickListener listener) {
             super(itemView);
-//            title = itemView.findViewById(R.id.recipeTitle);
-//            ingredients = itemView.findViewById(R.id.ingredients);
-//            thumbnail = itemView.findViewById(R.id.thumbnail);
-//            thumbnail.setOnClickListener(this);
-//            title.setOnClickListener(this);
-//            recyclerViewClickListener = listener;
-            //itemView.setOnClickListener(this); //can go on any of the individual items instead.
+            name = itemView.findViewById(R.id.name);
+            team = itemView.findViewById(R.id.team);
+            position = itemView.findViewById(R.id.position);
+            position.setOnClickListener(this);
+            name.setOnClickListener(this);
+            recyclerViewClickListener = listener;
+            itemView.setOnClickListener(this); //can go on any of the individual items instead.
         }
 
 
